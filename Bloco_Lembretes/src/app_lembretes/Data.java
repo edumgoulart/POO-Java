@@ -25,4 +25,16 @@ public class Data {
         System.out.println("Data: " + d + "/" + m + "/" + a);
     }
     
+    public int getDia(){
+        return d;
+    }
+    
+    public int getMes(){
+        return m;
+    }
+    
+    public int getAno(){
+        return a;
+    }
+    
 }

@@ -23,8 +23,50 @@ public class BlocoDeLembretes {
     
     public void incluirLembrete(Lembrete lembrete){
         if(count < tamanho){
-            lembretes[count] = new Lembrete();
+            lembretes[count] = lembrete;
             count++;
+        }
+    }
+    
+    public int numeroDeLembretes(){
+        return count;
+    }
+    
+    public void removerLembrete(int indice){
+        if(indice < 0 || indice > tamanho - 1){
+            System.out.println("Esse indice não existe");
+            return;
+        }
+        
+        for(int i = indice; i < tamanho - 1; i++){
+            lembretes[i] = lembretes[i+1];
+            
+        }
+        lembretes[tamanho - 1] = null;
+        count--;
+    }
+    
+    public void listarLembretes(){
+        System.out.println("Lembretes do bloco:\n");
+        for(int i = 0; i < count; i++){
+            System.out.println(i + ".");
+            lembretes[i].imprimir();
+            System.out.println("");
+        }
+    }
+    
+    public void buscarLembretesPorData(Data data){
+        System.out.print("Lembretes da data ");
+        data.imprimir();
+        for(int i = 0; i < count; i++){
+            if( lembretes[i].getData().getDia() == data.getDia() &&
+                lembretes[i].getData().getMes() == data.getMes() &&
+                lembretes[i].getData().getAno() == data.getAno() )
+            {
+                System.out.println(i + ".");
+                lembretes[i].imprimir();
+                System.out.println("");
+            }
         }
     }
 }

@@ -31,4 +31,8 @@ public class Lembrete {
         System.out.println("############################################");
 
     }
+    
+    public Data getData(){
+        return data;
+    }
 }

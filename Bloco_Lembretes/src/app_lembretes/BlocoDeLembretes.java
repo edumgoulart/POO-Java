@@ -22,10 +22,22 @@ public class BlocoDeLembretes {
     }
     
     public void incluirLembrete(Lembrete lembrete){
-        if(count < tamanho){
-            lembretes[count] = lembrete;
-            count++;
+        //Tem que aumentar o array
+        if(count >= this.tamanho){
+            
+            this.tamanho *= 2;
+            Lembrete[] newLembretes = new Lembrete[this.tamanho];
+            
+            for(int i = 0; i < count; i++){
+                newLembretes[i] = lembretes[i];
+            }
+            
+            lembretes = newLembretes;
         }
+        
+        lembretes[count] = lembrete;
+        count++;
+        
     }
     
     public int numeroDeLembretes(){

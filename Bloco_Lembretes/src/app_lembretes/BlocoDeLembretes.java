@@ -69,4 +69,15 @@ public class BlocoDeLembretes {
             }
         }
     }
+    
+    public void buscarLembretesPorNome(String nome){
+        System.out.println("Lembres com o nome: " + nome);
+        for(int i = 0; i < count; i++){
+            if(lembretes[i].getNome().contains(nome)){
+                System.out.println(i + ".");
+                lembretes[i].imprimir();
+                System.out.println("");
+            }
+        }
+    }
 }

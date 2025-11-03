@@ -24,6 +24,7 @@ public class Classe_do_Main {
         b1.listarLembretes();
         b1.incluirLembrete(new Lembrete("Aula de AED", "Hoje tem aula de AED", new Data(19,10,2025)));
         b1.buscarLembretesPorData(new Data(19,10,2025));
+        b1.buscarLembretesPorNome("POO");
     }
     
 }

@@ -35,4 +35,8 @@ public class Lembrete {
     public Data getData(){
         return data;
     }
+    
+    public String getNome(){
+        return nome;
+    }
 }
